@@ -112,23 +112,26 @@ body {
 }
 
 .content-row {
-  display: flex;
-  align-items: center;
-  gap: 36px;
-  justify-content: center;
-  margin-top: 1vh;
-  flex-wrap: wrap;
-  width: 100%;
+ display: flex;
+ align-items: center;
+ /* gap: 36px; */ /* <-- Isko hatayein */
+ gap: 2.5vw;  /* <-- Isko add karein (2.5vw lagbhag 36px hota hai 1440px screen par) */
+ justify-content: center;
+ margin-top: 1vh;
+ flex-wrap: wrap;
+ width: 100%;
 }
 
 .illustration-wrap {
-  width: 320px;
-  min-width: 260px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  margin-left: 12px;
+ /* width: 320px; */ /* <-- Isko hatayein */
+ width: 22%;    /* <-- Ise add karein (Yeh ab screen ke saath scale hoga) */
+ max-width: 320px; /* <-- Ise add karein (Maximum itna hi bada hoga) */
+ min-width: 260px; /* <-- Yeh pehle se hai, achha hai */
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ position: relative;
+ margin-left: 12px;
 }
 
 .circle img {
@@ -140,16 +143,21 @@ body {
 }
 
 .form-card {
-  width: 680px;
-  max-width: calc(100% - 340px);
-  background: #fff;
-  border-radius: 22px;
-  padding: 5vh 36px 2vh 36px;
-  gap: 1.5vh;
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
-  border: 2px solid #000;
-  display: flex;
-  flex-direction: column;
+ /* width: 680px; */ /* <-- Isko hatayein */
+ /* max-width: calc(100% - 340px); */ /* <-- Isko bhi hatayein */
+ 
+ width: 48%;   /* <-- Ise add karein (Yeh ab screen ke saath scale hoga) */
+ max-width: 680px; /* <-- Ise add karein (Maximum itna hi bada hoga) */
+ min-width: 300px; /* <-- Ise add karein (Taki mobile par bhi sahi dikhe) */
+ 
+ background: #fff;
+ border-radius: 22px;
+ padding: 5vh 36px 2vh 36px;
+ gap: 1.5vh;
+ box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+ border: 2px solid #000;
+ display: flex;
+ flex-direction: column;
 }
 
 .form-row {
