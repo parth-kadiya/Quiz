@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Patient Profile — Page 6</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="4.css" />
+  </head>
+  <body>
+    <div class="page-wrap">
+      <header class="top-logos">
+        <img src="assets/RSSDI.png" alt="left-logo" class="logo-left" />
+        <img src="assets/zydus.png" alt="right-logo" class="logo-right" />
+      </header>
+
+      <main class="hero">
+        <div class="banner">
+          <span>MASTER THE REAL WORLD CHALLENGE</span>
+        </div>
+
+        <div class="profile-card-wrap">
+          <div class="profile-content">
+            <div class="profile-header">
+              <img
+                src="icon/4.png"
+                alt="Profile Icon"
+                class="profile-icon"
+              />
+              <h1 class="profile-title">
+                Elevated liver enzymes in prediabetes
+              </h1>
+            </div>
+
+            <div class="quiz-section">
+              <div class="quiz-question">
+                <strong>3.</strong> What of the following therapies best address
+                her concern?
+              </div>
+
+              <div class="quiz-options">
+                <div class="option-item">
+                  <input type="radio" id="optA" name="quiz1" value="A" />
+                  <label for="optA">
+                    <span class="radio-style"></span>
+                    <strong>A)</strong> Add UDCA to control liver enzymes
+                  </label>
+                </div>
+                <div class="option-item">
+                  <input type="radio" id="optB" name="quiz1" value="B" />
+                  <label for="optB">
+                    <span class="radio-style"></span>
+                    <strong>B)</strong> Lifestyle modification alone
+                  </label>
+                </div>
+                <div class="option-item">
+                  <input type="radio" id="optC" name="quiz1" value="C" />
+                  <label for="optC">
+                    <span class="radio-style"></span>
+                    <strong>C)</strong> Pharmacotherapy with Metformin
+                  </label>
+                </div>
+                <div class="option-item">
+                  <input type="radio" id="optD" name="quiz1" value="D" />
+                  <label for="optD">
+                    <span class="radio-style"></span>
+                    <strong>D)</strong> Initiate Saroglitazar 4 mg OD
+                  </label>
+                </div>
+              </div>
+
+              <div class="quiz-controls">
+                <div id="quizError" class="quiz-error-msg">
+                  Please select an option first
+                </div>
+                <button id="submitBtn" class="quiz-next-btn">Submit</button>
+              </div>
+
+              <div class="correct-answer">
+                <i class="fas fa-check-square"></i>
+                Correct answer: D) Initiate Saroglitazar 4 mg OD.
+              </div>
+
+              <div class="rationale-box">
+                <strong>Rationale:</strong> This patient is prediabetic. Elevated
+                liver enzymes in prediabetes are primarily due to fatty liver
+                disease (MASLD). Initiating Saroglitazar 4 mg OD targets hepatic
+                biomarkers, triglycerides, and associated insulin resistance.
+                Follow-up the patient at 3 months for improvement in metabolic
+                parameters.
+                <br> <br>
+                <strong>Ref:</strong> Binmazi et al. IJCPR. 2025; 17(3); 17-21
+              </div>
+
+              <div class="quiz-final-controls">
+                <button
+                  id="finalNextBtn"
+                  class="quiz-next-btn"
+                  onclick="window.location.href='8.html'"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img
+          src="assets/Lipaglyn.png"
+          alt="bottom-liver-logo"
+          class="logo-lipaglyn"
+        />
+      </main>
+
+      <div class="profile-illustration">
+        <img
+          src="assets/illustration.png"
+          alt="Doctor Illustration"
+          class="doctor-img"
+        />
+      </div>
+    </div>
+
+    <script src="4.js"></script>
+  </body>
+</html>

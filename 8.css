@@ -1,0 +1,431 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+body {
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  /* Background styles waise hi hain */
+  background: radial-gradient(
+      1000px 600px at 35% 50%,
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.8) 30%,
+      rgba(230, 245, 253, 1) 60%
+    ),
+    linear-gradient(180deg, #f3fbff 0%, #eaf7fb 100%);
+  color: #202020;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.page-wrap {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 0;
+  padding: 2vh 3vw 1vh 3vw;
+}
+
+/* Top Logo styles */
+.top-logos {
+  position: relative;
+  height: 90px;
+  margin-bottom: 1vh;
+  flex-shrink: 0;
+}
+
+.top-logos img {
+  object-fit: contain;
+  user-select: none;
+}
+
+/* logo-left style (RSSDI) yahan se hata diya hai */
+
+.logo-right {
+  position: absolute;
+  right: 18px;
+  top: 6px;
+  max-height: 64px;
+  object-fit: contain;
+  user-select: none;
+}
+
+.logo-center-top {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -35px; /* zydus logo se align karne ke liye */
+  max-height: 150px; /* zydus logo se align karne ke liye */
+  object-fit: contain;
+  user-select: none;
+}
+
+/* Lipaglyn Logo style hata diya hai */
+
+/* Banner style (as-is) */
+.banner {
+  width: 60%;
+  margin: 1vh auto;
+  background: linear-gradient(90deg, #b04aa2 0%, #5869d8 100%);
+  color: #fff;
+  border-radius: 40px;
+  padding: 12px 26px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(80, 80, 90, 0.12);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: clamp(16px, 1.8vw, 20px);
+}
+
+.hero {
+  padding: 1vh 6px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 0;
+}
+
+/* === Saare Profile aur Quiz styles hata diye gaye hain === */
+
+/* === NAYE CERTIFICATE STYLES === */
+.certificate-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 3vh auto;
+  width: 100%;
+  max-width: 900px; /* Content ki width */
+}
+
+.congo-img {
+  max-width: 500px; /* Aap size adjust kar sakte hain */
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.mastered-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-weight: 700;
+  color: #333;
+  line-height: 1.4;
+  max-width: 800px;
+  margin-bottom: 30px;
+}
+
+.button-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Upar wale button aur neeche ki row me gap */
+  width: 100%;
+  max-width: 820px; /* Neeche ke 2 buttons ke liye jagah */
+  margin-bottom: 20px;
+}
+
+.button-grid .start-btn.btn-full {
+  width: 100%; /* Top button poori width lega */
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* 2 buttons ke beech me gap */
+  width: 100%;
+}
+
+/* === Button styles (1.css se copy kiye gaye) === */
+.start-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: linear-gradient(180deg, #20a6a3 0%, #118e86 100%);
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 2vh, 19px); /* Font thoda chhota */
+  padding: 12px 25px; /* Padding adjust ki */
+  border-radius: 36px;
+  border: none;
+  box-shadow: 0 14px 20px rgba(16, 113, 110, 0.25),
+    inset 0 -6px 14px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transform-origin: center;
+  transition: transform 0.14s ease, box-shadow 0.14s ease;
+  width: calc(50% - 10px); /* Taki 2 button ek row me fit ho */
+}
+
+.start-btn .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 6px;
+  border-radius: 18px;
+  flex-shrink: 0;
+}
+.start-btn .icon i {
+  font-style: normal;
+}
+
+.start-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 30px rgba(16, 113, 110, 0.28);
+}
+.start-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 10px rgba(16, 113, 110, 0.18);
+}
+/* === Button styles khatam === */
+
+/* === Naya RSSDI Logo Style (Bottom) === */
+.bottom-logo-rssdi {
+  display: block;
+  margin: 10px auto 10px auto; /* Center me */
+  height: 80px; /* Size adjust karein */
+  object-fit: contain;
+}
+
+/* === MOBILE RESPONSIVE STYLES === */
+
+@media (max-width: 768px) {
+  .page-wrap {
+    padding: 1vh 3vw;
+    padding-bottom: 20px;
+  }
+
+  /* Top logos */
+  .top-logos {
+    height: 70px;
+  }
+  .logo-right {
+    right: 15px;
+  }
+
+  .logo-center-top {
+  left: -20px; /* 50% ki jagah 15px kiya */
+  transform: none; /* Centering ke transform ko hata diya */
+  max-height: 128px;
+ }
+
+  /* Banner */
+  .banner {
+    width: 98%;
+    letter-spacing: 2px;
+    font-size: clamp(14px, 4vw, 16px);
+    padding: 10px 15px;
+  }
+
+  /* Naye Certificate Mobile Styles */
+  .congo-img {
+    max-width: 350px; /* Size ko 500px se 350px kiya */
+  }
+
+ .mastered-text {
+  font-size: 18px;
+}
+
+  /* Saare profile/quiz mobile styles hata diye gaye hain */
+
+  /* Naye Certificate Mobile Styles */
+  .mastered-text {
+    font-size: 18px;
+    max-width: 100%;
+  }
+
+  .button-grid {
+    gap: 15px;
+    width: 100%;
+  }
+
+  .button-row {
+    flex-direction: column; /* Mobile par neeche ke 2 button stack kiye */
+    gap: 15px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .start-btn,
+  .button-grid .start-btn.btn-full,
+  .button-row .start-btn {
+    font-size: 16px;
+    padding: 12px 20px;
+    min-width: 95%; /* Sab button full width */
+    width: 95%;
+  }
+
+  .start-btn .icon {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+
+  /* Bottom logo mobile */
+  .bottom-logo-rssdi {
+    height: 60px;
+    margin-top: 20px;
+  }
+}
+
+
+/* === DESKTOP MEDIA QUERIES (1200px - 1399px) === */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  /* 1. Logos */
+  .logo-center-top {
+    max-height: 110px;
+    top: -20px;
+  }
+  .logo-right {
+    max-height: 45px;
+  }
+
+  /* 2. Banner */
+  .banner {
+    font-size: 16px;
+  }
+
+  /* 3. Content */
+  .certificate-wrap {
+    max-width: 800px;
+  }
+  .congo-img {
+    max-width: 400px;
+  }
+  .mastered-text {
+    font-size: 20px;
+  }
+  .start-btn {
+    font-size: 16px;
+  }
+  .bottom-logo-rssdi {
+    height: 65px;
+  }
+}
+
+/* === DESKTOP MEDIA QUERIES (1400px - 1700px) === */
+@media (min-width: 1400px) and (max-width: 1700px) {
+  /* 1. Logos */
+  .logo-center-top {
+    max-height: 100px;
+    top: -15px;
+  }
+  .logo-right {
+    max-height: 40px;
+  }
+
+  /* 2. Banner */
+  .banner {
+    font-size: 15px;
+  }
+
+  /* 3. Content */
+  .certificate-wrap {
+    max-width: 750px;
+  }
+  .congo-img {
+    max-width: 380px;
+  }
+  .mastered-text {
+    font-size: 18px;
+  }
+  .start-btn {
+    font-size: 15px;
+  }
+  .bottom-logo-rssdi {
+    height: 60px;
+  }
+}
+
+/* === DESKTOP MEDIA QUERIES (1701px - 1800px) === */
+@media (min-width: 1701px) and (max-width: 1800px) {
+  /* 1. Logos */
+  .logo-center-top {
+    max-height: 180px;
+    top: -40px;
+  }
+  .logo-right {
+    max-height: 85px;
+  }
+
+  /* 2. Banner */
+  .banner {
+    font-size: 25px;
+  }
+
+  /* 3. Content */
+  .certificate-wrap {
+    max-width: 1000px;
+  }
+  .congo-img {
+    max-width: 500px;
+  }
+  .mastered-text {
+    font-size: 24px;
+  }
+  .start-btn {
+    font-size: 22px;
+  }
+  .bottom-logo-rssdi {
+    height: 100px;
+  }
+}
+
+/* === BADI TV SCREENS (1920px aur usse zyada) === */
+@media (min-width: 1920px) {
+  /* 1. Logos (Chhote) */
+  .logo-center-top {
+    max-height: 200px; /* Pehle 220px tha */
+    margin-top: -20px !important;
+  }
+  .logo-right {
+    max-height: 120px; /* Pehle 140px tha */
+    top: 20px; /* Pehle 25px tha */
+  }
+
+  /* 2. Banner (Chhota) */
+  .banner {
+    font-size: 24px; /* Pehle 38px tha */
+    padding: 20px 24px; /* Pehle 22px 38px tha */
+  }
+
+  /* 3. Content (Chhota) */
+  .certificate-wrap {
+    max-width: 1100px; /* Pehle 1200px tha */
+  }
+  .congo-img {
+    max-width: 650px; /* Pehle 700px tha */
+  }
+  .mastered-text {
+    font-size: 30px; /* Pehle 34px tha */
+  }
+  .start-btn {
+    font-size: 26px; /* Pehle 28px tha */
+    padding: 16px 36px; /* Pehle 18px 40px tha */
+  }
+  .bottom-logo-rssdi {
+    height: 110px; /* Pehle 120px tha */
+  }
+}

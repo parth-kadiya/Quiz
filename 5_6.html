@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Patient Profile — Page 5</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="4.css" />
+  </head>
+  <body>
+    <div class="page-wrap">
+      <header class="top-logos">
+        <img src="assets/RSSDI.png" alt="left-logo" class="logo-left" />
+        <img src="assets/zydus.png" alt="right-logo" class="logo-right" />
+      </header>
+
+      <main class="hero">
+        <div class="banner">
+          <span>MASTER THE REAL WORLD CHALLENGE</span>
+        </div>
+
+        <div class="profile-card-wrap">
+          <div class="profile-content">
+            <div class="profile-header">
+              <img
+                src="icon/6.png"
+                alt="Profile Icon"
+                class="profile-icon"
+              />
+              <h1 class="profile-title">
+                Hypertriglyceridemia uncontrolled with <br>statins and MASLD
+              </h1>
+            </div>
+
+            <div class="quiz-section">
+              <div class="quiz-question">
+                <strong>2.</strong> Which of the following features in this patient suggest underlying MASLD?
+              </div>
+
+              <div class="quiz-options">
+                <div class="option-item">
+                  <input type="radio" id="optA" name="quiz1" value="A" />
+                  <label for="optA">
+                    <span class="radio-style"></span>
+                    <strong>A)</strong> Hepatomegaly with fatty infiltration on imaging
+                  </label>
+                </div>
+                <div class="option-item">
+                  <input type="radio" id="optB" name="quiz1" value="B" />
+                  <label for="optB">
+                    <span class="radio-style"></span>
+                    <strong>B)</strong> Elevated TG and low HDL
+                  </label>
+                </div>
+                <div class="option-item">
+                  <input type="radio" id="optC" name="quiz1" value="C" />
+                  <label for="optC">
+                    <span class="radio-style"></span>
+                    <strong>C)</strong> Long standing T2DM with poor glycaemic control
+                  </label>
+                </div>
+                <div class="option-item">
+                  <input type="radio" id="optD" name="quiz1" value="D" />
+                  <label for="optD">
+                    <span class="radio-style"></span>
+                    <strong>D)</strong> Long standing T2DM, dyslipidaemia and imaging findings
+                  </label>
+                </div>
+              </div>
+
+              <div class="quiz-controls">
+                <div id="quizError" class="quiz-error-msg">
+                  Please select an option first
+                </div>
+                <button id="submitBtn" class="quiz-next-btn">Submit</button>
+              </div>
+
+              <div class="correct-answer">
+                <i class="fas fa-check-square"></i>
+                Correct answer: D) Long standing T2DM, dyslipidaemia and imaging findings
+              </div>
+
+              <div class="rationale-box">
+                <strong>Rationale:</strong> MASLD is common in diabetics. Studies show 7 out of 10 T2DM patients has fatty liver. Given the above three features fulfils the diagnostic framework of MASLD.
+              </div>
+
+              <div class="quiz-final-controls">
+                <button id="finalNextBtn" class="quiz-next-btn" onclick="window.location.href='6_6.html'">Next</button>
+              </div>
+            </div>
+            </div>
+        </div>
+        <img
+          src="assets/Lipaglyn.png"
+          alt="bottom-liver-logo"
+          class="logo-lipaglyn"
+        />
+      </main>
+
+      <div class="profile-illustration">
+        <img
+          src="assets/illustration.png"
+          alt="Doctor Illustration"
+          class="doctor-img"
+        />
+      </div>
+    </div>
+
+    <script src="4.js"></script>
+  </body>
+</html>

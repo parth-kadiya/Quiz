@@ -1,0 +1,603 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+body {
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  background: radial-gradient(
+      1000px 600px at 35% 50%,
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.8) 30%,
+      rgba(230, 245, 253, 1) 60%
+    ),
+    linear-gradient(180deg, #f3fbff 0%, #eaf7fb 100%);
+  color: #202020;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* === PAGE PADDING KO UPDATE KIYA TAKI LOGO OVERLAP NA HO === */
+.page-wrap {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 0;
+  padding: 2vh 3vw 1vh 3vw;
+  padding-bottom: 100px; /* Logo ke liye neeche jagah banayi */
+}
+
+.top-logos {
+  position: relative;
+  height: 90px;
+  margin-bottom: 1vh;
+  flex-shrink: 0;
+}
+
+.top-logos img {
+  object-fit: contain;
+  user-select: none;
+}
+.logo-left {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  max-height: 90px;
+  object-fit: contain;
+  user-select: none;
+}
+
+.logo-right {
+  position: absolute;
+  right: 18px;
+  top: 6px;
+  max-height: 64px;
+  object-fit: contain;
+  user-select: none;
+}
+
+/* === PURANE LOGO STYLES HATA DIYE GAYE === */
+
+/* === NAYA LIPAGLYN LOGO STYLE (DESKTOP DEFAULT) === */
+.logo-lipaglyn {
+  position: fixed;
+  bottom: -20px; /* Neeche se 20px upar */
+  left: -10px; /* Left se 30px dur */
+  height: 150px; /* Desktop size */
+  object-fit: contain;
+  user-select: none;
+  z-index: 10;
+}
+
+.banner {
+  width: 60%;
+  margin: 1vh auto;
+  background: linear-gradient(90deg, #b04aa2 0%, #5869d8 100%);
+  color: #fff;
+  border-radius: 40px;
+  padding: 12px 26px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(80, 80, 90, 0.12);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+
+  font-size: clamp(16px, 1.8vw, 20px);
+}
+
+.hero {
+  padding: 1vh 6px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 0;
+}
+
+.content-row {
+ display: flex;
+ align-items: center;
+ /* gap: 36px; */ /* <-- Isko hatayein */
+ gap: 2.5vw;  /* <-- Isko add karein (2.5vw lagbhag 36px hota hai 1440px screen par) */
+ justify-content: center;
+ margin-top: 1vh;
+ flex-wrap: wrap;
+ width: 100%;
+}
+
+.illustration-wrap {
+ /* width: 320px; */ /* <-- Isko hatayein */
+ width: 22%;    /* <-- Ise add karein (Yeh ab screen ke saath scale hoga) */
+ max-width: 320px; /* <-- Ise add karein (Maximum itna hi bada hoga) */
+ min-width: 260px; /* <-- Yeh pehle se hai, achha hai */
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ position: relative;
+ margin-left: 12px;
+}
+
+.circle img {
+  width: 260px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+@media (min-width: 1700px) and (max-width: 2200px) {
+ .circle img {
+  width: 400px;
+}
+}
+
+.form-card {
+ /* width: 680px; */ /* <-- Isko hatayein */
+ /* max-width: calc(100% - 340px); */ /* <-- Isko bhi hatayein */
+ 
+ width: 48%;   /* <-- Ise add karein (Yeh ab screen ke saath scale hoga) */
+ max-width: 680px; /* <-- Ise add karein (Maximum itna hi bada hoga) */
+ min-width: 300px; /* <-- Ise add karein (Taki mobile par bhi sahi dikhe) */
+ 
+ background: #fff;
+ border-radius: 22px;
+ padding: 5vh 36px 2vh 36px;
+ gap: 1.5vh;
+ box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+ border: 2px solid #000;
+ display: flex;
+ flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-card .form-row:not(:nth-child(5)) {
+  margin-bottom: 1vh;
+}
+
+.form-row label {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: clamp(17px, 1.8vh, 19px);
+  margin-bottom: 0.5vh;
+  color: #1e1e1e;
+}
+
+.form-card .form-row:nth-child(2) label {
+  margin-bottom: 2vh;
+}
+
+.form-row input,
+.form-row select {
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+  padding: 1vh 8px;
+  font-size: clamp(16px, 1.7vh, 17px);
+  outline: none;
+  width: 100%;
+  background: transparent;
+  font-family: "Poppins", sans-serif;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+.form-row select {
+  color: #1e1e1e;
+}
+.form-row select:invalid {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.select-wrapper::after {
+  content: "\25BC";
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.start-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 2vh;
+}
+.start-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(180deg, #20a6a3 0%, #118e86 100%);
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 2vh, 20px);
+  padding: 12px 32px;
+  border-radius: 36px;
+  border: none;
+  box-shadow: 0 14px 20px rgba(16, 113, 110, 0.25),
+    inset 0 -6px 14px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transform-origin: center;
+  transition: transform 0.14s ease, box-shadow 0.14s ease;
+}
+.start-btn .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 6px;
+  border-radius: 18px;
+}
+.start-btn .icon i {
+  font-style: normal;
+}
+
+.start-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 30px rgba(16, 113, 110, 0.28);
+}
+.start-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 10px rgba(16, 113, 110, 0.18);
+}
+
+.form-row input::placeholder {
+  font-family: "Poppins", sans-serif;
+  opacity: 0.7;
+}
+
+.form-row input:-ms-input-placeholder {
+  font-family: "Poppins", sans-serif;
+  opacity: 0.7;
+}
+
+.form-row input::-ms-input-placeholder {
+  font-family: "Poppins", sans-serif;
+  opacity: 0.7;
+}
+
+/* === MOBILE RESPONSIVE STYLES === */
+
+@media (max-width: 768px) {
+  /* Page ki basic padding kam ki */
+  .page-wrap {
+    padding: 1vh 3vw;
+    padding-bottom: 20px; /* Mobile me neeche normal padding */
+  }
+
+  /* 1. Top Logos ko set kiya */
+  .top-logos {
+    height: 70px; /* Header ki height mobile ke liye fix ki */
+  }
+
+  .logo-left {
+    left: 15px; /* Left se 15px */
+    transform: none; /* Centering hatayi */
+    top: 6px;
+    max-height: 64px; /* Right logo ke barabar size */
+  }
+
+  .logo-right {
+    right: 15px; /* Right se 15px */
+  }
+
+  /* 2. Banner ko center aur full width kiya */
+  .banner {
+    width: 98%;
+    letter-spacing: 2px;
+    font-size: clamp(14px, 4vw, 16px);
+    padding: 10px 15px;
+  }
+
+  /* 3. Content ko stack kiya */
+  .content-row {
+    flex-direction: column; /* Sabko vertical stack kiya */
+    align-items: center; /* Center align kiya */
+    gap: 20px; /* Beech mein gap diya */
+    margin-top: 2vh;
+  }
+
+  /* 3. Liver Image ko set kiya */
+  .illustration-wrap {
+    width: 100%;
+    margin-left: 0; /* Desktop margin reset kiya */
+  }
+
+  .circle img {
+    width: 230px; /* Liver image ko thoda chota kiya */
+  }
+
+  /* 4. Form Card ko set kiya */
+  .form-card {
+    width: 95%; /* Mobile par 95% width */
+    max-width: 100%; /* Desktop max-width override kiya */
+    padding: 4vh 25px 3vh 25px; /* Padding adjust ki */
+  }
+
+  /* === 5. LIPAGLYN LOGO (MOBILE STYLE) === */
+  .logo-lipaglyn {
+    position: static; /* Fixed position hatakar normal flow me laaya */
+    height: 128px; /* Mobile size */
+    margin-top: 0;
+    /* Ye automatically center ho jayega kyunki .content-row me 'align-items: center' hai */
+  }
+
+  /* Form ke font size ko thoda stable kiya */
+  .form-row label {
+    font-size: 17px;
+  }
+  .form-row input,
+  .form-row select {
+    font-size: 16px;
+  }
+  .start-btn {
+    font-size: 18px;
+  }
+
+  /* === PURANE LOGO STYLES HATA DIYE GAYE === */
+}
+
+/* === LARGE LAPTOP / SMALL DESKTOP (1349px - 1450px) === */
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  /* 1. Containers (Aur Jyada Chhote) */
+  .illustration-wrap {
+    max-width: 270px; /* Pehle 290px tha */
+  }
+  .form-card {
+    max-width: 600px; /* Pehle 620px tha */
+  }
+
+  /* 2. Image (Aur Jyada Chhoti) */
+  .circle img {
+    width: 210px; /* Pehle 230px tha */
+  }
+
+  /* 3. Fonts (Aur Jyada Chhote) */
+  .banner {
+    font-size: 17px; /* Pehle 18px tha */
+  }
+  .form-row label {
+    font-size: 16px; /* Pehle 17px tha */
+  }
+  .form-row input,
+  .form-row select {
+    font-size: 14px; /* Pehle 15px tha */
+  }
+  .start-btn {
+    font-size: 17px; /* Pehle 18px tha */
+  }
+
+  /* 4. Logos (Aur Jyada Chhote) */
+  .top-logos {
+    height: 75px; /* Pehle 80px tha */
+  }
+  .logo-left {
+    max-height: 75px; /* Pehle 80px tha */
+  }
+  .logo-right {
+    max-height: 50px; /* Pehle 55px tha */
+  }
+  .logo-lipaglyn {
+    height: 120px; /* Pehle 130px tha */
+  }
+}
+@media (min-width: 1400px) and (max-width: 1700px) {
+  /* 1. Containers (Aur Jyada Chhote) */
+  .illustration-wrap {
+    max-width: 310px; /* Pehle 330px tha */
+  }
+  .form-card {
+    max-width: 660px; /* Pehle 700px tha */
+  }
+
+  /* 2. Image (Aur Jyada Chhoti) */
+  .circle img {
+    width: 270px; /* Pehle 290px tha */
+  }
+
+  /* 3. Fonts (Aur Jyada Chhote) */
+  .banner {
+    font-size: 19px; /* Pehle 20px tha */
+  }
+  .form-row label {
+    font-size: 17px; /* Pehle 18px tha */
+  }
+  .form-row input,
+  .form-row select {
+    font-size: 16px; /* Pehle 17px tha */
+  }
+  .start-btn {
+    font-size: 19px; /* Pehle 20px tha */
+  }
+
+  /* 4. Logos (Aur Jyada Chhote) */
+  .top-logos {
+    height: 85px; /* Pehle 90px tha */
+  }
+  .logo-left {
+    max-height: 85px; /* Pehle 90px tha */
+  }
+  .logo-right {
+    max-height: 60px; /* Pehle 64px tha */
+  }
+  .logo-lipaglyn {
+    height: 140px; /* Pehle 150px tha */
+  }
+}
+
+
+@media (min-width: 1701px) and (max-width: 1800px) {
+  /* 1. Containers (Aur Chhote) */
+  .illustration-wrap {
+    max-width: 360px; /* Pehle 400px tha */
+  }
+  .form-card {
+    max-width: 760px; /* Pehle 820px tha */
+  }
+
+  /* 2. Image (Aur Chhoti) */
+  .circle img {
+    width: 340px; /* Pehle 380px tha */
+  }
+
+  /* 3. Fonts (Aur Chhote) */
+  .banner {
+    font-size: 22px; /* Pehle 24px tha */
+  }
+  .form-row label {
+    font-size: 20px; /* Pehle 22px tha */
+  }
+  .form-row input,
+  .form-row select {
+    font-size: 18px; /* Pehle 20px tha */
+  }
+  .start-btn {
+    font-size: 22px; /* Pehle 24px tha */
+  }
+
+  /* 4. Logos (Aur Chhote) */
+  .top-logos {
+    height: 100px; /* Pehle 110px tha */
+  }
+  .logo-left {
+    max-height: 100px; /* Pehle 110px tha */
+  }
+  .logo-right {
+    max-height: 72px; /* Pehle 80px tha */
+  }
+  .logo-lipaglyn {
+    height: 165px; /* Pehle 180px tha */
+  }
+}
+
+@media (min-width: 2000px) and (max-width: 2100px) {
+  /* 1. Containers */
+  .illustration-wrap {
+    max-width: 420px !important; /* Pehle 440px tha */
+  }
+  .form-card {
+    max-width: 800px !important; /* Pehle 800px tha */
+  }
+
+  /* 2. Image */
+  .circle img {
+    width: 400px !important; /* Pehle 420px tha */
+  }
+
+  /* 3. Fonts */
+  .banner {
+    font-size: 25px !important; /* Pehle 27px tha */
+  }
+  .form-row label {
+    font-size: 22px !important; /* Pehle 24px tha */
+  }
+  .form-row input,
+  .form-row select {
+    font-size: 20px !important; /* Pehle 22px tha */
+  }
+  .start-btn {
+    font-size: 24px !important; /* Pehle 26px tha */
+  }
+
+  /* 4. Logos */
+  .top-logos {
+    height: 110px !important; /* Pehle 120px tha */
+  }
+  .logo-left {
+    max-height: 110px !important; /* Pehle 120px tha */
+  }
+  .logo-right {
+    max-height: 80px !important; /* Pehle 90px tha */
+  }
+  .logo-lipaglyn {
+    height: 180px !important; /* Pehle 200px tha */
+  }
+}
+
+/* === BADI TV SCREENS (1920px aur usse zyada) === */
+
+@media (min-width: 1920px) {
+  /* 1. Dono main containers ka max-width badhayenge */
+  .illustration-wrap {
+    max-width: 480px; /* Pehle 320px tha */
+  }
+
+  .form-card {
+    max-width: 1000px; /* Pehle 680px tha */
+    padding: 4vh 60px; /* Andar ki padding bhi thodi badha di */
+  }
+
+  /* 2. Liver ki image ko bhi bada karenge */
+  .circle img {
+    width: 450px; /* Pehle 260px (ya 400px) tha */
+  }
+
+  /* 3. Sabhi Fonts ko bada karenge */
+  .banner {
+    font-size: 30px; /* Pehle 20px max tha */
+    padding: 18px 30px;
+  }
+
+  .form-row label {
+    font-size: 26px; /* Pehle 19px max tha */
+  }
+
+  .form-row input,
+  .form-row select {
+    font-size: 24px; /* Pehle 17px max tha */
+    padding-bottom: 1.5vh;
+  }
+
+  .start-btn {
+    font-size: 28px; /* Pehle 20px max tha */
+    padding: 18px 40px;
+  }
+
+  /* 4. Sabhi Logos ko bhi scale-up karenge */
+  .top-logos {
+    height: 130px; /* Header height badha di */
+  }
+  .logo-left {
+    max-height: 130px; /* Pehle 90px tha */
+  }
+  .logo-right {
+    max-height: 100px; /* Pehle 64px tha */
+    top: 15px;
+  }
+  .logo-lipaglyn {
+    height: 220px; /* Pehle 150px tha */
+  }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Master The Real World — Replica</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-wrap">
+      <header class="top-logos">
+        <img src="assets/RSSDI.png" alt="left-logo" class="logo-left" />
+        <img src="assets/zydus.png" alt="right-logo" class="logo-right" />
+      </header>
+
+      <main class="hero">
+        <div class="banner">
+          <span>MASTER THE REAL WORLD CHALLENGE</span>
+        </div>
+
+        <div class="content-row">
+          <div class="illustration-wrap">
+            <div class="circle">
+              <img src="assets/liver.png" alt="illustration" />
+            </div>
+            </div>
+
+          <div class="form-card">
+            <div class="form-row">
+              <label>Dr Name</label>
+              <input type="text" placeholder="Enter doctor's name" />
+            </div>
+
+            <div class="form-row">
+              <label>Speciality</label>
+              <div class="select-wrapper">
+                <select id="speciality-select" required>
+                  <option value="" disabled selected>
+                    Select a speciality
+                  </option>
+                  <option value="Consultant_Endocrinologist">Consultant Endocrinologist</option>
+                  <option value="Consultant_Diabetologist">Consultant Diabetologist</option>
+                  <option value="Consultant_Cardiologist">Consultant Cardiologist</option>
+                  <option value="Consultant_Nephrologist">Consultant Nephrologist</option>
+                  <option value="Consultant_Physician">Consultant Physician</option>
+                  <option value="General_Physician">General Physician</option>
+
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <label>City</label>
+              <input type="text" placeholder="e.g., Mumbai" />
+            </div>
+
+            <div class="form-row">
+              <label>Contact Number</label>
+              <input type="tel" placeholder="Enter 10-digit number" />
+            </div>
+
+            <div class="form-row">
+              <label>Email id</label>
+              <input type="email" placeholder="e.g., example@mail.com" />
+            </div>
+            <div class="start-wrap">
+              <button id="startBtn" class="start-btn" onclick="window.location.href='2.html'">
+                <span class="icon"><i class="fas fa-hand-pointer"></i></span>
+                <span class="btn-text">Click here to start</span>
+              </button>
+            </div>
+          </div>
+
+          <img
+            src="assets/Lipaglyn.png"
+            alt="bottom-liver-logo"
+            class="logo-lipaglyn"
+          />
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
